@@ -54,9 +54,11 @@ public class AuthController {
         data.put("token", token);
         data.put("account", account);
         data.put("roles", new String[]{"USER"});
+        data.put("role", "user");
         data.put("balance", "0");
-        // default expire handling for normal users can be filled by other logic
         data.put("expireDate", "未知");
+        data.put("isExpired", false);
+        data.put("canUseChat", true);
 
         return ResponseEntity.ok(Map.of("code", 0, "msg", "", "data", data));
     }
